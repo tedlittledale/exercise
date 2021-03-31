@@ -1,12 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
-import { getSnapshot } from "mobx-state-tree";
-import { compose } from "ramda";
-import { observer } from "mobx-react-lite";
-import { withPaths } from "../utils/store";
-import Header from "../components/Header";
-import { initializeStore } from "../store";
+import Header from "../src/components/Header";
 
 const Pages = styled("div")``;
 
@@ -14,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Example Title</title>
+        <title></title>
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@_superted" />
         <meta property="og:url" content="https://countdown.tedspace.me/" />
@@ -53,7 +48,7 @@ const Home = () => {
   );
 };
 
-export default compose(withPaths(["exampleModel"]), observer)(Home);
+export default Home;
 
 // The date returned here will be different for every request that hits the page,
 // that is because the page becomes a serverless function instead of being statically
@@ -61,5 +56,5 @@ export default compose(withPaths(["exampleModel"]), observer)(Home);
 export async function getStaticProps() {
   const store = initializeStore();
 
-  return { props: { initialState: getSnapshot(store) } };
+  return { props: {} };
 }

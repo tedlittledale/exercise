@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { withProp } from "styled-tools";
 
 const Wrapper = styled("header")`
   height: 100vh;
@@ -20,7 +19,7 @@ const Header = ({}) => {
     <>
       <Wrapper>
         <div>
-          <h1>Prototype boilterplate</h1>
+          <h1>Scandinavian Adventures</h1>
         </div>
       </Wrapper>
     </>
